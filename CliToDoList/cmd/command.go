@@ -15,6 +15,7 @@ type CmdFlags struct {
 	Del      int
 	Toggle   int
 	List     bool
+	AIHelp   bool
 }
 
 func NewCmdFlags() *CmdFlags {
@@ -25,6 +26,7 @@ func NewCmdFlags() *CmdFlags {
 	flag.IntVar(&cf.Del, "del", -1, "Specify a todo by index to Delete")
 	flag.IntVar(&cf.Toggle, "toggle", -1, "Specify a todo by index to toggle")
 	flag.BoolVar(&cf.List, "list", false, "List all todos")
+	flag.BoolVar(&cf.AIHelp, "AIHelp", false, "List all todos")
 
 	flag.Parse()
 
@@ -35,6 +37,8 @@ func (cf *CmdFlags) Execute(todos *Todos) {
 	switch {
 	case cf.List:
 		todos.print()
+	case cf.AIHelp:
+		todos.Aiprint()
 	case cf.Add != "":
 		parts := strings.SplitN(cf.Add, ":", 2)
 		if len(parts) != 2 {
