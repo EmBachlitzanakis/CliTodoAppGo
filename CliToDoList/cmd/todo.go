@@ -202,10 +202,16 @@ func extractPrioritiesFromAIResponse(response string, searchTerm string) ([]stri
 }
 
 // Render the todos table with priorities
-func renderTodosTable(todos []Todo, priorities []string) {
+func renderTodosTable(todos []Todo, priorities ...[]string) {
 	table := table.New(os.Stdout)
 	table.SetRowLines(false)
 	table.SetHeaders("#", "Title", "Completed", "Priority", "Created At", "Completed At")
+
+	// Determine if priorities are provided
+	var priorityList []string
+	if len(priorities) > 0 {
+		priorityList = priorities[0]
+	}
 
 	for index, t := range todos {
 		completed := "❌"
@@ -218,8 +224,8 @@ func renderTodosTable(todos []Todo, priorities []string) {
 		}
 
 		priority := "N/A"
-		if index < len(priorities) {
-			priority = priorities[index]
+		if len(priorityList) > index {
+			priority = priorityList[index]
 		}
 
 		table.AddRow(strconv.Itoa(index), t.Title, completed, priority, t.CreatedAt.Format(time.RFC1123), completedAt)
@@ -229,19 +235,6 @@ func renderTodosTable(todos []Todo, priorities []string) {
 }
 
 func (todos *Todos) print() {
-	table := table.New(os.Stdout)
-	table.SetRowLines(false)
-	table.SetHeaders("#", "Title", "Completed", "Priority", "Created At", "Completed At")
-	for index, t := range *todos {
-		completed := "❌"
-		completedAt := ""
-		if t.Completed {
-			completed = "✔"
-			if t.CompletedAt != nil {
-				completedAt = t.CompletedAt.Format(time.RFC1123)
-			}
-		}
-		table.AddRow(strconv.Itoa(index), t.Title, completed, t.Priority, t.CreatedAt.Format(time.RFC1123), completedAt)
-	}
-	table.Render()
+	renderTodosTable(*todos)
+
 }
