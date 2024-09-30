@@ -226,6 +226,8 @@ func renderTodosTable(todos []Todo, priorities ...[]string) {
 		priority := "N/A"
 		if len(priorityList) > index {
 			priority = priorityList[index]
+		} else {
+			priority = t.Priority
 		}
 
 		table.AddRow(strconv.Itoa(index), t.Title, completed, priority, t.CreatedAt.Format(time.RFC1123), completedAt)
