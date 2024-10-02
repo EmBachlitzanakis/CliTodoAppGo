@@ -18,4 +18,23 @@ This is a command-line interface (CLI) Todo List application that not only helps
 - [Contributing](#contributing)
 - [License](#license)
 
+
+## Installation
+
+To set up the CLI Todo List application with AI-Powered Task Prioritization, follow these steps:
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+
+- Python 3.7 or higher
+- `pip` (Python package installer)
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine using Git:
+
+```bash
+git clone https://github.com/yourusername/todo-cli.git
+cd todo-cli
 ---
