@@ -39,17 +39,15 @@ Follow these steps to set up the project and run the example:
 Open your terminal and execute the following command:
 
 
-ollama run llama2
+$ ollama run llama2
 
-go run github.com/tmc/langchaingo/examples/ollama-completion-example@main
+-go run github.com/tmc/langchaingo/examples/ollama-completion-example@main
 
 You should receive an output similar to this:
 
-The first human to set foot on the moon was Neil Armstrong, an American astronaut, who stepped onto the lunar surface.
+- The first human to set foot on the moon was Neil Armstrong, an American astronaut, who stepped onto the lunar surface.
 
-those are the instactions from 
-
-https://tmc.github.io/langchaingo/docs/getting-started/guide-ollama
+those are the instactions from :
 
 [LangChainGo](https://tmc.github.io/langchaingo/docs/getting-started/guide-ollama)
 ---
