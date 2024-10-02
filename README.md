@@ -25,21 +25,31 @@ To set up the CLI Todo List application with AI-Powered Task Prioritization, fol
 
 ### Prerequisites
 
-Ollama: Download and install Ollama.
-Go: Download and install Go.
-Steps
-Initialize Ollama: In your terminal, execute the command $ ollama run llama2. The first run might take some time as the model needs to be fetched to your computer.
-Run the Example: Enter the command:
-go run github.com/tmc/langchaingo/examples/ollama-completion-example@main
+Before you get started, ensure you have the following installed on your machine:
 
-You should receive (something like) the following output:
+- **Ollama**: [Download and install Ollama](https://ollama.com/download).
+- **Go**: [Download and install Go](https://golang.org/dl/).
 
-The first human to set foot on the moon was Neil Armstrong, an American astronaut, who stepped onto the lunar su
-### Step 1: Clone the Repository
+## Getting Started
 
-Clone the repository to your local machine using Git:
+Follow these steps to set up the project and run the example:
+
+### Step 1: Initialize Ollama
+
+Open your terminal and execute the following command:
 
 ```bash
-git clone https://github.com/yourusername/todo-cli.git
-cd todo-cli
+ollama run llama2
+
+go run github.com/tmc/langchaingo/examples/ollama-completion-example@main
+
+You should receive an output similar to this:
+
+The first human to set foot on the moon was Neil Armstrong, an American astronaut, who stepped onto the lunar surface.
+
+those are the instactions from 
+
+https://tmc.github.io/langchaingo/docs/getting-started/guide-ollama
+
+[LangChainGo](https://tmc.github.io/langchaingo/docs/getting-started/guide-ollama)
 ---
