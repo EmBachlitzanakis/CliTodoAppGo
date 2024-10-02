@@ -38,7 +38,7 @@ Follow these steps to set up the project and run the example:
 
 Open your terminal and execute the following command:
 
-```bash
+
 ollama run llama2
 
 go run github.com/tmc/langchaingo/examples/ollama-completion-example@main
